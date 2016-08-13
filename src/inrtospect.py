@@ -91,7 +91,7 @@ def graph_construct(dot,graph):
     for node in graph:
         node=node_hash[node.__name__]
         label=generate_label(node.attributes,node.functions)
-        dot.node(node.name.__name__ ,label)
+        dot.node(node.name.__name__ ,node.name.__name__+"\n"+label)
         for child_node in node.child:
             dot.edge(node.name.__name__,child_node.name.__name__)
 
